@@ -1,20 +1,25 @@
- <div class="cursor-pointer block  md:hidden " id="menu-movil">
-            <img src="/public/resources/hamburger-button.svg" alt="Menu" class="dark:bg-white">
- </div>
+<div class="cursor-pointer block md:hidden" id="menu-movil">
+    <img src="resources/hamburger-button.svg" alt="Menu" class="dark:bg-[#3F679A]">
+</div>
 
 
- <script>
-    const icons = document.getElementById("menu-movil")
-    const verticalHeader = document.getElementById('vertical-header')
-    	icons.addEventListener('click', () => {
-   
-    // Alternar la clase 'hidden' en el elemento
-    if (verticalHeader.classList.contains('hidden')) {
-        verticalHeader.classList.remove('hidden'); // Mostrar el elemento
-    } else {
-        verticalHeader.classList.add('hidden'); // Ocultar el elemento
-    }
-});
 
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const icons = document.querySelector("#menu-movil");
+        const verticalHeader = document.querySelector('#vertical-header');
 
- </script>
+        if (icons && verticalHeader) {
+            icons.addEventListener('click', () => {
+                // Alternar la clase 'hidden' en el elemento
+                if (verticalHeader.classList.contains('hidden')) {
+                    verticalHeader.classList.remove('hidden'); // Mostrar el elemento
+                } else {
+                    verticalHeader.classList.add('hidden'); // Ocultar el elemento
+                }
+            });
+        } else {
+            console.error('Elemento "menu-movil" o "vertical-header" no encontrado');
+        }
+    });
+</script>

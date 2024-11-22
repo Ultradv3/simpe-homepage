@@ -28,11 +28,16 @@ import VerticalHeader from "./components/VerticalHeader.astro";
     }
   </style>
   <script>
+    const defaulTheme = localStorage.getItem("theme"); // Obtener el tema actual del almacenamiento local
+    
+    const htmlElement = document.documentElement;
+
+    htmlElement.classList.add(defaulTheme); // Agregar la clase 'dark' al elemento HTML
     const icons = document.getElementById("vertical-button");
     const verticalHeader = document.getElementById("vertical-header");
 
     icons.addEventListener("click", () => {
-      console.log("clic");
+      
       // Alternar la clase 'hidden' en el elemento
       if (verticalHeader.classList.contains("hidden")) {
         verticalHeader.classList.remove("hidden"); // Mostrar el elemento

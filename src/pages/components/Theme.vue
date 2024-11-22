@@ -19,12 +19,12 @@
   </div>
 </template>
 <script setup>
-
-    
+  
 function onclic() {
-    const themeToggle = document.getElementById("theme-toggle");
+   const themeToggle = document.getElementById("theme-toggle");
   const htmlElement = document.documentElement;
-    console.log("hola")
+    
+   
   if (htmlElement.classList.contains("dark")) {
     htmlElement.classList.remove("dark");
     localStorage.setItem("theme", "light");
