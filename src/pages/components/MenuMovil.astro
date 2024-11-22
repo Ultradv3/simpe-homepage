@@ -1,0 +1,20 @@
+ <div class="cursor-pointer block  md:hidden " id="menu-movil">
+            <img src="/public/resources/hamburger-button.svg" alt="Menu" class="dark:bg-white">
+ </div>
+
+
+ <script>
+    const icons = document.getElementById("menu-movil")
+    const verticalHeader = document.getElementById('vertical-header')
+    	icons.addEventListener('click', () => {
+   
+    // Alternar la clase 'hidden' en el elemento
+    if (verticalHeader.classList.contains('hidden')) {
+        verticalHeader.classList.remove('hidden'); // Mostrar el elemento
+    } else {
+        verticalHeader.classList.add('hidden'); // Ocultar el elemento
+    }
+});
+
+
+ </script>

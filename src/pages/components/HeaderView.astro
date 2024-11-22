@@ -1,52 +1,28 @@
 ---
+import MenuMovil from "./MenuMovil.astro";
+import Theme from "./Theme.vue";
+
 
 ---
 
-<header class="flex items-center  md:justify-between md:px-96  py-5 px-3">
-    <div class="w-full md:w-0 dark:text-white">
-        <h1>Logo</h1>
+<header class="flex items-center  md:justify-between xl:px-96  py-5 px-5">
+ 
+    <div class="w-full md:w-0 dark:text-white ">
+      <div class="cursor-pointer w-4">
+          <h1 >Logo</h1>
+      </div>
+        
     </div>
     <ul class="hidden md:flex gap-10 text-[#223344] dark:text-white text-sm font-semibold items-center">
         <li class="hover:text-blue-900 cursor-pointer hover:underline hover:decoration-2 transition-colors duration-150">Product</li>
         <li class="hover:text-blue-900 cursor-pointer hover:underline hover:decoration-2 transition-colors duration-150">About us</li>
         <li class="hover:text-blue-900 cursor-pointer hover:underline hover:decoration-2 transition-colors duration-150">Resource</li>
         <li class="hover:text-blue-900 cursor-pointer hover:underline hover:decoration-2 transition-colors duration-150">Contact</li>
-    </ul>
-    <div class="flex items-center gap-4">
-        <div class="hidden md:block" id="theme-toggle">
-            <div class=" min-w-14 max-w-14 bg-[#223344] rounded-3xl flex p-1 gap-2">
-                    <div class="dark:bg-yellow-50 rounded-full  min-w-5">
-                         <img src="/public/resources/Moon_fill.svg" alt="">
-                    </div>
-                   
-                     <div class="bg-yellow-50 rounded-full min-w-5 dark:opacity-0">
-                         <img src="/public/resources/Sun_fill.svg" alt="" >
-                    </div>
-            </div>
-        </div>
-        <div class="md:hidden cursor-pointer">
-            <img src="/public/resources/hamburger-button.svg" alt="Menu">
-        </div>
-    </div>
+        <Theme client:load/>
+      </ul>
+   <!--Thema -->
+
+  
+   <MenuMovil />
+    
 </header>
- <script>
-    // JavaScript para alternar el modo oscuro
-    const themeToggle = document.getElementById('theme-toggle');
-    const htmlElement = document.documentElement;
-
-    themeToggle.addEventListener('click', () => {
-      // Alternar la clase 'dark' en el elemento <html>
-      if (htmlElement.classList.contains('dark')) {
-        htmlElement.classList.remove('dark');
-        localStorage.setItem('theme', 'light'); // Guardar el estado
-      } else {
-        htmlElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark'); // Guardar el estado
-      }
-    });
-
-    // Persistencia de tema al cargar la página
-    if (localStorage.getItem('theme') === 'dark') {
-      htmlElement.classList.add('dark');
-    }
-  </script>

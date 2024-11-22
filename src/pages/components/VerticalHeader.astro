@@ -1,0 +1,43 @@
+---
+import Theme from "./Theme.vue";
+---
+
+<header class="hidden flex-col h-100 " id="vertical-header ">
+  <div
+    class="w-60 absolute  z-50 bottom-0 right-0 top-0 bg-[#ffffff] "
+  >
+  <div class="absolute -left-0  rounded-lg p-1  mt-3  cursor-pointer" id="vertical-button">
+    <img src="/resources/x.svg" alt="" class="w-6">
+  </div>
+    <ul
+      class="md:flex flex flex-col gap-10 text-[#223344] text-sm font-semibold items-center mt-10"
+    >
+      <li
+        class="hover:text-blue-900 cursor-pointer hover:underline hover:decoration-2 transition-colors duration-150"
+      >
+        Product
+      </li>
+      <li
+        class="hover:text-blue-900 cursor-pointer hover:underline hover:decoration-2 transition-colors duration-150"
+      >
+        About us
+      </li>
+      <li
+        class="hover:text-blue-900 cursor-pointer hover:underline hover:decoration-2 transition-colors duration-150"
+      >
+        Resource
+      </li>
+      <li
+        class="hover:text-blue-900 cursor-pointer hover:underline hover:decoration-2 transition-colors duration-150"
+      >
+        Contact
+      </li>
+      <li>
+        <Theme client:load/>
+      </li>
+    </ul>
+  </div>
+  <div class=" h-full w-full z-10 absolute  backdrop-blur-sm ">
+   
+  </div>
+</header>
